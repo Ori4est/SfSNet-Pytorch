@@ -32,7 +32,7 @@ class MaskGenerator:
         #    # center crop just to bypass it
         #    w, h = gray_image.shape
         #    face_rects = [[w//4, h//4, w//2, h//2], # left top right bottom
-                         ]
+        #                 ]
         return face_rects
 
     def align(self, image, size=(240, 240), scale=1.8, warp=True, crop=True, resize=True,
