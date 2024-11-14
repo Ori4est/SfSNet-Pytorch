@@ -84,7 +84,7 @@ def _test():
 
         # Note: n_out2, al_out2, light_out is the actual output
         Irec, Ishd = create_shading_recon(n_out2, al_out2, light_out)
-        mask = np.full((M, M), 255, dtype=np.float32)
+        mask = np.full((M, M, 3), 255, dtype=np.float32)
         diff = (mask // 255)
         n_out2 = n_out2 * diff
         al_out2 = al_out2 * diff
