@@ -34,9 +34,9 @@ def _test():
         # read image
         image = cv2.imread(image_name)
         # crop face and generate mask of face
-        aligned, mask, im, landmark = mg.align(image, size=(M, M))[0]
+        ##aligned, mask, im, landmark = mg.align(image, size=(M, M))[0]
         # resize
-        im = cv2.resize(im, (M, M))
+        im = cv2.resize(image, (M, M))
         # normalize to (0, 1.0)
         im = np.float32(im) / 255.0
         # from (128, 128, 3) to (1, 3, 128, 128)
@@ -84,7 +84,7 @@ def _test():
 
         # Note: n_out2, al_out2, light_out is the actual output
         Irec, Ishd = create_shading_recon(n_out2, al_out2, light_out)
-
+        mask = np.full((M, M), 255, dtype=np.float32)
         diff = (mask // 255)
         n_out2 = n_out2 * diff
         al_out2 = al_out2 * diff
